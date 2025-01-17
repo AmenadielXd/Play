@@ -397,7 +397,7 @@ class Call(PyTgCalls):
                     chat_id=original_chat_id,
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"https://t.me/{app.username}?start=info_{videoid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         check[0]["dur"],
                         user,
@@ -444,7 +444,7 @@ class Call(PyTgCalls):
                     chat_id=original_chat_id,
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"https://t.me/{app.username}?start=info_{videoid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         check[0]["dur"],
                         user,
@@ -474,7 +474,7 @@ class Call(PyTgCalls):
                 run = await app.send_photo(
                     chat_id=original_chat_id,
                     photo=config.STREAM_IMG_URL,
-                    caption=_["stream_2"].format(user),
+                    caption=_["stream_2"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", user),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
                 db[chat_id][0]["mystic"] = run
@@ -505,8 +505,7 @@ class Call(PyTgCalls):
                         photo=config.TELEGRAM_AUDIO_URL
                         if str(streamtype) == "audio"
                         else config.TELEGRAM_VIDEO_URL,
-                        caption=_["stream_1"].format(
-                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                        caption=_["stream_1"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
@@ -517,8 +516,7 @@ class Call(PyTgCalls):
                     run = await app.send_photo(
                         chat_id=original_chat_id,
                         photo=config.SOUNCLOUD_IMG_URL,
-                        caption=_["stream_1"].format(
-                            config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
+                        caption=_["stream_1"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", config.SUPPORT_CHAT, title[:23], check[0]["dur"], user
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
@@ -531,7 +529,7 @@ class Call(PyTgCalls):
                         chat_id=original_chat_id,
                         photo=img,
                         caption=_["stream_1"].format(
-                            f"https://t.me/{app.username}?start=info_{videoid}",
+                            f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                             title[:23],
                             check[0]["dur"],
                             user,
