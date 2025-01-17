@@ -1,3 +1,4 @@
+"""
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -116,3 +117,4 @@ def private_help_panel(_):
         ],
     ]
     return buttons
+"""
