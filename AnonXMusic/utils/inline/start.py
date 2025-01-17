@@ -4,15 +4,6 @@ import config
 from AnonXMusic import app
 
 
-def start_panel(_):
-    buttons = [
-        [
-            InlineKeyboardButton(text="𝑆𝑒𝑐𝑟𝑒𝑡 𝐼𝑛𝑙𝑖𝑛𝑒", switch_inline_query_current_chat="")
-        ],
-    ]
-    return buttons
-
-
 def private_panel(_):
     buttons = [
         [
