@@ -5,10 +5,11 @@ import psutil
 from pyrogram import __version__ as pyrover
 from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
-from pyrogram.types import InputMediaPhoto, Message
+from pyrogram.types import InputMediaPhoto, Message,InputMediaVideo
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
+import random
 from AnonXMusic import app
 from AnonXMusic.core.userbot import assistants
 from AnonXMusic.misc import SUDOERS, mongodb
@@ -19,13 +20,14 @@ from AnonXMusic.utils.inline.stats import back_stats_buttons, stats_buttons
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command(["stats", "gstats"]) & filters.group & ~BANNED_USERS)
+
+@app.on_message(filters.command(["mstats"]) & filters.group & ~BANNED_USERS)
 @language
 async def stats_global(client, message: Message, _):
     upl = stats_buttons(_, True if message.from_user.id in SUDOERS else False)
-    await message.reply_photo(
-        photo=config.STATS_IMG_URL,
-        caption=_["gstats_2"].format(app.mention),
+    random_image_url = random.choice(config.STATS_IMG_URL)  # Select a random image URL
+    await message.reply(
+        text=f'<a href="{random_image_url}"> 🍥</a> {_["gstats_2"].format(app.mention)}',
         reply_markup=upl,
     )
 
@@ -34,6 +36,7 @@ async def stats_global(client, message: Message, _):
 @languageCB
 async def home_stats(client, CallbackQuery, _):
     upl = stats_buttons(_, True if CallbackQuery.from_user.id in SUDOERS else False)
+    random_image_url = random.choice(config.STATS_IMG_URL)  # Select a random image URL
     await CallbackQuery.edit_message_text(
         text=_["gstats_2"].format(app.mention),
         reply_markup=upl,
@@ -63,13 +66,9 @@ async def overall_stats(client, CallbackQuery, _):
         config.AUTO_LEAVING_ASSISTANT,
         config.DURATION_LIMIT_MIN,
     )
-    med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
-    try:
-        await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
-    except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
-        )
+    random_image_url = random.choice(config.STATS_IMG_URL)  # Select a random image URL
+    await CallbackQuery.message.delete()
+    await CallbackQuery.message.reply(text=f'<a href="{random_image_url}"> 🍥</a> {text}', reply_markup=upl)
 
 
 @app.on_callback_query(filters.regex("bot_stats_sudo"))
@@ -83,9 +82,12 @@ async def bot_stats(client, CallbackQuery, _):
     except:
         pass
     await CallbackQuery.edit_message_text(_["gstats_1"].format(app.mention))
+
+    # Collecting system stats
     p_core = psutil.cpu_count(logical=False)
     t_core = psutil.cpu_count(logical=True)
     ram = str(round(psutil.virtual_memory().total / (1024.0**3))) + " ɢʙ"
+
     try:
         cpu_freq = psutil.cpu_freq().current
         if cpu_freq >= 1000:
@@ -94,15 +96,18 @@ async def bot_stats(client, CallbackQuery, _):
             cpu_freq = f"{round(cpu_freq, 2)}ᴍʜᴢ"
     except:
         cpu_freq = "ғᴀɪʟᴇᴅ ᴛᴏ ғᴇᴛᴄʜ"
+
     hdd = psutil.disk_usage("/")
     total = hdd.total / (1024.0**3)
     used = hdd.used / (1024.0**3)
     free = hdd.free / (1024.0**3)
+
     call = await mongodb.command("dbstats")
     datasize = call["dataSize"] / 1024
     storage = call["storageSize"] / 1024
     served_chats = len(await get_served_chats())
     served_users = len(await get_served_users())
+
     text = _["gstats_5"].format(
         app.mention,
         len(ALL_MODULES),
@@ -126,10 +131,7 @@ async def bot_stats(client, CallbackQuery, _):
         call["collections"],
         call["objects"],
     )
-    med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
-    try:
-        await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
-    except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
-        )
+
+    random_image_url = random.choice(config.STATS_IMG_URL)  # Select a random image URL
+    await CallbackQuery.message.delete()
+    await CallbackQuery.message.reply(text=f'<a href="{random_image_url}"> 🍥</a> {text}', reply_markup=upl)
