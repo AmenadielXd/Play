@@ -1,3 +1,4 @@
+"""
 import asyncio
 
 from pyrogram import filters
@@ -5,7 +6,7 @@ from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
 from AnonXMusic import app
-from AnonXMusic.misc import SUDOERS
+from config import OWNER_ID
 from AnonXMusic.utils.database import (
     get_active_chats,
     get_authuser_names,
@@ -20,7 +21,7 @@ from config import adminlist
 IS_BROADCASTING = False
 
 
-@app.on_message(filters.command("broadcast") & SUDOERS)
+@app.on_message(filters.command(["mbcast"]) & filters.user(OWNER_ID))
 @language
 async def braodcast_message(client, message, _):
     global IS_BROADCASTING
