@@ -33,7 +33,7 @@ from AnonXMusic.utils.inline.settings import (
     setting_markup,
     vote_mode_markup,
 )
-from AnonXMusic.utils.inline.start import private_panel
+# from AnonXMusic.utils.inline.start import private_panel
 from config import BANNED_USERS, OWNER_ID
 
 
