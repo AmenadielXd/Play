@@ -8,7 +8,6 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from AnonXMusic import app
 from AnonXMusic.misc import _boot_
-# from AnonXMusic.plugins.sudo.sudoers import sudoers_list
 from AnonXMusic.utils.database import (
     add_served_chat,
     add_served_user,
@@ -29,8 +28,6 @@ async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
-        if name[0:4] == "help":
-            return await message.reply_text("Help section is currently unavailable.")
             if await is_on_off(2):
                 return await app.send_message(
                     chat_id=config.LOGGER_ID,
