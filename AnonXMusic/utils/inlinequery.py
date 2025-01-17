@@ -1,3 +1,4 @@
+"""
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
 answer = []
@@ -41,4 +42,4 @@ answer.extend(
             input_message_content=InputTextMessageContent("/loop 3"),
         ),
     ]
-)
+)"""
