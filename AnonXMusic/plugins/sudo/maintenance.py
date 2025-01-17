@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from AnonXMusic import app
-from AnonXMusic.misc import SUDOERS
+from config import OWNER_ID
 from AnonXMusic.utils.database import (
     get_lang,
     is_maintenance,
@@ -11,8 +11,7 @@ from AnonXMusic.utils.database import (
 )
 from strings import get_string
 
-
-@app.on_message(filters.command(["maintenance"]) & SUDOERS)
+@app.on_message(filters.command(["maintenance"]) & filters.user(OWNER_ID))
 async def maintenance(client, message: Message):
     try:
         language = await get_lang(message.chat.id)
