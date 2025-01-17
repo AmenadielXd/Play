@@ -31,8 +31,6 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             return await message.reply_text("Help section is currently unavailable.")
-        if name[0:3] == "sud":
-            await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
                 return await app.send_message(
                     chat_id=config.LOGGER_ID,
