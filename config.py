@@ -79,8 +79,8 @@ autoclean = []
 confirmer = {}
 
 
-START_IMG_URL = [ "https://unitedcamps.in/Images/file_5843.jpg",
-"https://unitedcamps.in/Images/file_10524.jpg",
+START_IMG_URL = "https://unitedcamps.in/Images/file_5843.jpg"
+["https://unitedcamps.in/Images/file_10524.jpg",
 "https://unitedcamps.in/Images/file_10523.jpg",
 "https://unitedcamps.in/Images/file_10522.jpg",
 "https://unitedcamps.in/Images/file_10521.jpg",
@@ -95,8 +95,8 @@ PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg"
 )
 PLAYLIST_IMG_URL = "https://files.catbox.moe/dsg8dl.mp4"
-STATS_IMG_URL = [ "https://unitedcamps.in/Images/file_5843.jpg",
-"https://unitedcamps.in/Images/file_10524.jpg",
+STATS_IMG_URL = "https://unitedcamps.in/Images/file_5843.jpg"
+["https://unitedcamps.in/Images/file_10524.jpg",
 "https://unitedcamps.in/Images/file_10523.jpg",
 "https://unitedcamps.in/Images/file_10522.jpg",
 "https://unitedcamps.in/Images/file_10521.jpg",
