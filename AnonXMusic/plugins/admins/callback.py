@@ -231,7 +231,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"https://t.me/{app.username}?start=info_{videoid}",
+                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                     title[:23],
                     duration,
                     user,
@@ -267,7 +267,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"https://t.me/{app.username}?start=info_{videoid}",
+                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                     title[:23],
                     duration,
                     user,
@@ -286,7 +286,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             button = stream_markup(_, chat_id)
             run = await CallbackQuery.message.reply_photo(
                 photo=STREAM_IMG_URL,
-                caption=_["stream_2"].format(user),
+                caption=_["stream_2"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", user),
                 reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
@@ -312,8 +312,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     photo=TELEGRAM_AUDIO_URL
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
-                    caption=_["stream_1"].format(
-                        SUPPORT_CHAT, title[:23], duration, user
+                    caption=_["stream_1"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", SUPPORT_CHAT, title[:23], duration, user
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -325,8 +324,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     photo=SOUNCLOUD_IMG_URL
                     if str(streamtype) == "audio"
                     else TELEGRAM_VIDEO_URL,
-                    caption=_["stream_1"].format(
-                        SUPPORT_CHAT, title[:23], duration, user
+                    caption=_["stream_1"].format(f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>", SUPPORT_CHAT, title[:23], duration, user
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -338,7 +336,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 run = await CallbackQuery.message.reply_photo(
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"https://t.me/{app.username}?start=info_{videoid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         duration,
                         user,
