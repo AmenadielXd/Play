@@ -5,6 +5,7 @@ import config
 from AnonXMusic import YouTube, app
 from AnonXMusic.core.call import Anony
 from AnonXMusic.misc import db
+from config import BOT_NAME, BOT_USERNAME
 from AnonXMusic.utils.database import get_loop
 from AnonXMusic.utils.decorators import AdminRightsCheck
 from AnonXMusic.utils.inline import close_markup, stream_markup
