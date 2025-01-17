@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from AnonXMusic import app
 from AnonXMusic.misc import _boot_
-from AnonXMusic.plugins.sudo.sudoers import sudoers_list
+# from AnonXMusic.plugins.sudo.sudoers import sudoers_list
 from AnonXMusic.utils.database import (
     add_served_chat,
     add_served_user,
