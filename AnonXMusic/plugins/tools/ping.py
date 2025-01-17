@@ -15,7 +15,7 @@ from config import BANNED_USERS
 async def ping_com(client, message: Message, _):
     start = datetime.now()
     response = await message.reply_text(
-        caption=_["ping_1"].format(app.mention),
+        text=_["ping_1"].format(app.mention),
     )
     pytgping = await Anony.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
