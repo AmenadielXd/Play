@@ -12,6 +12,7 @@ from pytgcalls.exceptions import (
     TelegramServerError,
 )
 from pytgcalls.types import Update
+from config import BOT_NAME, BOT_USERNAME
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQualityVideo
 from pytgcalls.types.stream import StreamAudioEnded
