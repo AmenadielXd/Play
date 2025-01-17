@@ -79,8 +79,8 @@ autoclean = []
 confirmer = {}
 
 
-START_IMG_URL = "https://unitedcamps.in/Images/file_5843.jpg"
-["https://unitedcamps.in/Images/file_10524.jpg",
+START_IMG_URL = [ "https://unitedcamps.in/Images/file_5843.jpg",
+"https://unitedcamps.in/Images/file_10524.jpg",
 "https://unitedcamps.in/Images/file_10523.jpg",
 "https://unitedcamps.in/Images/file_10522.jpg",
 "https://unitedcamps.in/Images/file_10521.jpg",
