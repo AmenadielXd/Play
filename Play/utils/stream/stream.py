@@ -5,16 +5,16 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AnonXMusic import Carbon, YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import db
+from Play import Carbon, YouTube, app
+from Play.core.call import Anony
+from Play.misc import db
 from config import BOT_NAME, BOT_USERNAME
-from AnonXMusic.utils.database import add_active_video_chat, is_active_chat
-from AnonXMusic.utils.exceptions import AssistantErr
-from AnonXMusic.utils.inline import aq_markup, close_markup, stream_markup
-from AnonXMusic.utils.pastebin import AnonyBin
-from AnonXMusic.utils.stream.queue import put_queue, put_queue_index
-from AnonXMusic.utils.thumbnails import get_thumb
+from Play.utils.database import add_active_video_chat, is_active_chat
+from Play.utils.exceptions import AssistantErr
+from Play.utils.inline import aq_markup, close_markup, stream_markup
+from Play.utils.pastebin import AnonyBin
+from Play.utils.stream.queue import put_queue, put_queue_index
+from Play.utils.thumbnails import get_thumb
 
 
 async def stream(
