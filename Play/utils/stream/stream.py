@@ -105,7 +105,8 @@ async def stream(
                     original_chat_id,
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{vidid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                        f"https://t.me/{app.username}?start=info_{vidid}",
                         title[:23],
                         duration_min,
                         user_name,
@@ -191,7 +192,8 @@ async def stream(
                 original_chat_id,
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{vidid}",
+                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                    f"https://t.me/{app.username}?start=info_{vidid}",
                     title[:23],
                     duration_min,
                     user_name,
@@ -358,7 +360,8 @@ async def stream(
                 original_chat_id,
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{vidid}",
+                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                    f"https://t.me/{app.username}?start=info_{vidid}",
                     title[:23],
                     duration_min,
                     user_name,
