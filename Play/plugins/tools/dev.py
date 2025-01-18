@@ -10,7 +10,7 @@ from time import time
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from AnonXMusic import app
+from Play import app
 from config import OWNER_ID
 
 
@@ -152,7 +152,7 @@ async def forceclose_command(_, CallbackQuery):
 )
 async def shellrunner(_, message: Message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="<b>ᴇxᴀᴍᴩʟᴇ :</b>\n/sh git pull")
+        return await edit_or_reply(message, text="<b>ᴇxᴀᴍᴩʟᴇ :</b> <code>/sh git pull</code>")
     text = message.text.split(None, 1)[1]
     if "\n" in text:
         code = text.split("\n")
