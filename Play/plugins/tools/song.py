@@ -232,10 +232,6 @@ async def video_download_cb(client, CallbackQuery, _):
         return await mystic.edit_text(_["video_10"])
     os.remove(file_path)
 
-import os
-import requests
-from pyrogram import Client, filters
-from Alex import app
 
 def fetch_song(song_name):
     url = f"https://song-teleservice.vercel.app/song?songName={song_name.replace(' ', '%20')}"
