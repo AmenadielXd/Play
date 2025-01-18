@@ -10,16 +10,16 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from AnonXMusic import app
+from Play import app
 from config import OWNER_ID
-from AnonXMusic.misc import HAPP, SUDOERS, XCB
-from AnonXMusic.utils.database import (
+from Play.misc import HAPP, SUDOERS, XCB
+from Play.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from AnonXMusic.utils.decorators.language import language
-from AnonXMusic.utils.pastebin import AnonyBin
+from Play.utils.decorators.language import language
+from Play.utils.pastebin import AnonyBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -36,7 +36,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"]) & filters.user(OWNER_ID))
+@app.on_message(filters.command(["mupdate", "mgitpull"]) & filters.user(OWNER_ID))
 @language
 async def update_(client, message, _):
     if await is_heroku():
