@@ -6,9 +6,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from AnonXMusic import app
-from AnonXMusic.misc import _boot_
-from AnonXMusic.utils.database import (
+from Play import app
+from Play.misc import _boot_
+from Play.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -16,8 +16,8 @@ from AnonXMusic.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from AnonXMusic.utils.decorators.language import LanguageStart
-from AnonXMusic.utils.formatters import get_readable_time
+from Play.utils.decorators.language import LanguageStart
+from Play.utils.formatters import get_readable_time
 from config import BANNED_USERS
 from strings import get_string
 
