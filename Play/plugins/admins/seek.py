@@ -1,11 +1,11 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from AnonXMusic import YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import db
-from AnonXMusic.utils import AdminRightsCheck, seconds_to_min
-from AnonXMusic.utils.inline import close_markup
+from Play import YouTube, app
+from Play.core.call import Anony
+from Play.misc import db
+from Play.utils import AdminRightsCheck, seconds_to_min
+from Play.utils.inline import close_markup
 from config import BANNED_USERS
 
 
