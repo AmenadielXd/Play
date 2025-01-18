@@ -1,9 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from AnonXMusic import app
-from config import OWNER_ID
-from AnonXMusic.utils.database import (
+from Play import app
+from config import OWNER_ID
+
+from Play.utils.database import (
     get_lang,
     is_maintenance,
     maintenance_off,
