@@ -398,7 +398,8 @@ class Call(PyTgCalls):
                     chat_id=original_chat_id,
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                        f"https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         check[0]["dur"],
                         user,
@@ -531,12 +532,12 @@ class Call(PyTgCalls):
                         chat_id=original_chat_id,
                         photo=img,
                         caption=_["stream_1"].format(
-    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",  # {0}
-    f"https://t.me/{app.username}?start=info_{videoid}",  # {1} (Video link)
-    title[:23],  # {2} (Title)
-    check[0]["dur"],  # {3} (Duration)
-    user,  # {4} (Requested By)
-),
+                            f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                            f"https://t.me/{app.username}?start=info_{videoid}",
+                            title[:23],
+                            check[0]["dur"],
+                            user,
+                        ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                     db[chat_id][0]["mystic"] = run
