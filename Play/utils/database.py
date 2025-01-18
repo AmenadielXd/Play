@@ -6,6 +6,7 @@ from Play.core.mongo import mongodb
 
 authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
+blockeddb = mongodb.blockedusers
 autoenddb = mongodb.autoend
 assdb = mongodb.assistants
 chatsdb = mongodb.chats
