@@ -2,8 +2,8 @@ from pyrogram import filters
 
 from Play import app
 from config import OWNER_ID
-from AnonXMusic.utils.database import add_off, add_on
-from AnonXMusic.utils.decorators.language import language
+from Play.utils.database import add_off, add_on
+from Play.utils.decorators.language import language
 
 
 @app.on_message(filters.command(["logger"]) & filters.user(OWNER_ID))
