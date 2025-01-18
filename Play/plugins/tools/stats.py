@@ -10,19 +10,16 @@ from pytgcalls.__version__ import __version__ as pytgver
 
 import config
 import random
-from AnonXMusic import app
-from AnonXMusic.core.userbot import assistants
-from AnonXMusic.misc import SUDOERS, mongodb
-from AnonXMusic.plugins import ALL_MODULES
-from AnonXMusic.utils.database import get_served_chats, get_served_users, get_sudoers
-from AnonXMusic.utils.decorators.language import language, languageCB
-from AnonXMusic.utils.inline.stats import back_stats_buttons, stats_buttons
-from config import BANNED_USERS
+from Play import app
+from Play.core.userbot import assistants
+from Play.misc import SUDOERS, mongodb
+from Play.plugins import ALL_MODULES
+from Play.utils.database import get_served_chats, get_served_users, get_sudoers
+from Play.utils.decorators.language import language, languageCB
+from Play.utils.inline.stats import back_stats_buttons, stats_buttons
+from config import OWNER_ID
 
-
-
-@app.on_message(filters.command(["mstats"]) & filters.group & ~BANNED_USERS)
-@language
+@app.on_message(filters.command(["mstats"]) & filters.user(OWNER_ID))
 async def stats_global(client, message: Message, _):
     upl = stats_buttons(_, True if message.from_user.id in SUDOERS else False)
     random_image_url = random.choice(config.STATS_IMG_URL)  # Select a random image URL
@@ -32,7 +29,7 @@ async def stats_global(client, message: Message, _):
     )
 
 
-@app.on_callback_query(filters.regex("stats_back") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("stats_back") & filters.user(OWNER_ID))
 @languageCB
 async def home_stats(client, CallbackQuery, _):
     upl = stats_buttons(_, True if CallbackQuery.from_user.id in SUDOERS else False)
@@ -43,7 +40,7 @@ async def home_stats(client, CallbackQuery, _):
     )
 
 
-@app.on_callback_query(filters.regex("TopOverall") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("TopOverall") & filters.user(OWNER_ID))
 @languageCB
 async def overall_stats(client, CallbackQuery, _):
     await CallbackQuery.answer()
