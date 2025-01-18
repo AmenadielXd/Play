@@ -37,6 +37,16 @@
         "value": "6603948327",
         "required": true
       },
+      "BOT_NAME": {
+        "description": "Enter your 'Bot Name' here which you are using.",
+        "value": "Nova UI",
+        "required": true
+      },
+      "BOT_USERNAME": {
+        "description": "Enter your 'Bot Username' (without @) here which you are using.",
+        "value": "novauibot",
+        "required": true
+      },
       "STRING_SESSION": {
         "description": "A Pyrogram v2 String Session.",
         "value": "",
