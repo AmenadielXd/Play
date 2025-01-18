@@ -120,7 +120,8 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
+                f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                f"https://t.me/{app.username}?start=info_{videoid}",
                 title[:23],
                 check[0]["dur"],
                 user,
@@ -153,7 +154,8 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
+                f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                f"https://t.me/{app.username}?start=info_{videoid}",
                 title[:23],
                 check[0]["dur"],
                 user,
@@ -220,7 +222,8 @@ async def skip(cli, message: Message, _, chat_id):
             run = await message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
+                    f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                    f"https://t.me/{app.username}?start=info_{videoid}",
                     title[:23],
                     check[0]["dur"],
                     user,
