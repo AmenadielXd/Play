@@ -3,7 +3,7 @@ from pyrogram.types import Message
 from unidecode import unidecode
 
 from Play import app
-from Play.misc import SUDOERS
+from config import OWNER_ID
 from Play.utils.database import (
     get_active_chats,
     get_active_video_chats,
@@ -11,8 +11,7 @@ from Play.utils.database import (
     remove_active_video_chat,
 )
 
-
-@app.on_message(filters.command(["activevc", "activevoice"]) & SUDOERS)
+@app.on_message(filters.command(["activevc", "activevoice"]) & filters.user(OWNER_ID))
 async def activevc(_, message: Message):
     mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
