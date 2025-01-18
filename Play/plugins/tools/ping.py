@@ -3,14 +3,13 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.types import Message
 
-from AnonXMusic import app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.utils import bot_sys_stats
-from AnonXMusic.utils.decorators.language import language
-from config import BANNED_USERS
+from Play import app
+from Play.core.call import Anony
+from Play.utils import bot_sys_stats
+from Play.utils.decorators.language import language
+from config import OWNER_ID
 
-
-@app.on_message(filters.command(["mping"]) & ~BANNED_USERS)
+@app.on_message(filters.command(["mping"]) & filters.user(OWNER_ID))
 @language
 async def ping_com(client, message: Message, _):
     start = datetime.now()
