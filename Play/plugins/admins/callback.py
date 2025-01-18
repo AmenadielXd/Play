@@ -337,7 +337,8 @@ async def del_back_playlist(client, CallbackQuery, _):
                 run = await CallbackQuery.message.reply_photo(
                     photo=img,
                     caption=_["stream_1"].format(
-                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>, https://t.me/{app.username}?start=info_{videoid}",
+                        f"<a href='https://t.me/{BOT_USERNAME}'>{BOT_NAME}</a>",
+                        f"https://t.me/{app.username}?start=info_{videoid}",
                         title[:23],
                         duration,
                         user,
