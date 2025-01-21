@@ -375,14 +375,12 @@ async def markup_timer():
                         continue
                 except:
                     pass
-                except:
-                    continue
+                continue
             except:
                 continue
 
 
 asyncio.create_task(markup_timer())
-
 """
 import asyncio
 
