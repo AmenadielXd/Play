@@ -11,7 +11,7 @@ from Play.misc import db
 from config import BOT_NAME, BOT_USERNAME
 from Play.utils.database import add_active_video_chat, is_active_chat
 from Play.utils.exceptions import AssistantErr
-from Play.utils.inline import aq_markup, close_markup, stream_markup
+from Play.utils.inline import close_markup, stream_markup #, aq_markup
 from Play.utils.pastebin import AnonyBin
 from Play.utils.stream.queue import put_queue, put_queue_index
 from Play.utils.thumbnails import get_thumb
