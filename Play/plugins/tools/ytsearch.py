@@ -4,6 +4,7 @@ from youtube_search import YoutubeSearch
 from Play import app
 from pyrogram import filters
 from config import BOT_USERNAME
+from youtubesearchpython import VideosSearch
 
 
 @app.on_message(filters.command("yt"))
