@@ -1,4 +1,3 @@
-"""
 import asyncio
 
 from pyrogram import filters
@@ -168,4 +167,3 @@ async def auto_clean():
 
 
 asyncio.create_task(auto_clean())
-"""
